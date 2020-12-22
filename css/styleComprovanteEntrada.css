@@ -1,0 +1,57 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+    list-style: none;
+    text-decoration: none;
+}
+.centerObject{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.linhas{
+    width: 100%;
+    min-height: 20px;
+    height: auto;
+    overflow: hidden;
+    
+    font-family: 'Quicksand', sans-serif;
+        
+    font-size: 1.6em;
+    
+    margin-bottom: 70px;
+}
+
+.linhas p{
+    margin-top: 7px;
+    
+    float: left;
+}
+
+#base{
+    width: 653px;
+    height: 400px;
+    
+    margin-top: 120px;
+    
+    border-top: dashed 6px #DCC500;
+    border-bottom: dashed 6px #DCC500;
+    border-left: dashed 6px #00558B;
+    border-right: dashed 6px #00558B;
+    
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#numeroComprovante{
+    width: 200px;
+    height: 45px;
+    
+    background-color: #EBEBEB;
+    
+    float: right;
+}

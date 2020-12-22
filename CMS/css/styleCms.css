@@ -1,0 +1,494 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+    list-style: none;
+    text-decoration: none;
+}
+
+h2{
+    width: 800px;
+    
+    text-align: center;
+    
+    font-family: 'Quicksand', sans-serif;
+    
+    text-align: center;
+    
+    background-color: #DCC500;
+}
+
+.camposConsulta{
+    width: 400px;
+    min-height: 70px;
+    height: auto;
+    overflow: hidden;
+    
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+h5{
+    font-family: 'Quicksand', sans-serif;
+    
+    text-align: center;
+}
+
+.centerObject{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.linhaDivs, .linhaDivsCadastro{
+    width: 100%;
+    min-height: 100px;
+    height: auto;
+    overflow: hidden;
+}
+
+.linhaDivsCadastro{
+    margin-bottom: 80px;
+}
+
+header, footer{
+    width: 1166px;
+    height: 150px;
+    
+    color: #00558B;
+    
+    font-size: 2.5em;
+    
+    font-family: 'Quicksand', sans-serif;
+    
+    padding-left: 120px;
+    padding-top: 30px;
+    
+    float: right;
+    
+    background-color: white;
+}
+
+footer{
+    height: 110px;
+    
+    padding: 10px;
+}
+
+header figure img{
+    width: 32px;
+    height: 32px;
+    
+    margin-top: -50px;
+    margin-right: 10px;
+    
+    float: right;
+}
+
+header figure img:hover{
+    cursor: pointer;
+}
+
+footer img{
+    width: 120px;
+    height: 100px;
+    margin-right: 10px;
+    
+    float: right;
+}
+
+.baseCms{
+    width: 1300px;
+    min-height: 700px;
+    height: auto;
+    overflow: hidden;
+    
+    border: solid 2px #00558B;
+    
+    margin-top: 60px;
+    margin-bottom: 60px;
+    
+    background-color: #00558B;
+}
+
+.menuCmsLateral{
+    width: 130px;
+    height: 740px;
+        
+    background-color: #00558B;
+    
+    padding-top: 40px;
+    padding-left: 25px;
+    padding-right: 25px;
+    
+    float: left;
+}
+
+.submenusLaterais{
+    width: 80px;
+    height: 110px;
+    
+    margin-bottom: 30px;
+    
+    color: white;
+    
+    text-align: center;
+}
+
+.submenusLaterais figure{
+    width: 80px;
+    height: 70px;
+}
+
+.submenusLaterais figure img{
+    width: 80px;
+    height: 70px;
+}
+
+#conteudoCmsPrincipal, .conteudoCms{
+    width: 1166px;
+    min-height: 480px;
+    height: auto;
+    overflow: hidden;
+    
+    font-family: 'Quicksand', sans-serif;
+    
+    font-size: 1.7em;
+    
+    padding-left: 120px;
+    padding-right: 155px;
+    
+    text-align: justify;
+    
+    float: right;
+    
+    background-color: white;
+}
+
+.conteudoCms{
+    min-height: 450px;
+    
+    padding-top: 30px;
+}
+
+.cadastrosPrecosHorarios, .consultasPrecosHorarios{
+    width: 420px;
+    min-height: 362px;
+    height: auto;
+    overflow: hidden;
+    
+    background-color: #DCC500;
+    
+    float: left;
+}
+
+.consultasPrecosHorarios{
+    padding-left: 80px;
+    padding-right: 80px;
+    
+    background-color: #00558B;
+}
+
+.cadastrosPrecosHorarios h5{
+    color: #00558B;
+}
+
+.consultasPrecosHorarios h5, .cadastrosPrecosHorarios h5{
+    margin-bottom: 35px;
+    
+    color: white;
+}
+
+.consultasPrecosHorarios p{
+    font-size: 0.55em;
+    
+    font-weight: bold;
+}
+
+#inserirPreco{
+    width: 320px;
+    min-height: 50px;
+    height: auto;
+    overflow: hidden;
+    
+    margin-top: 35px;
+    
+    padding-left: 35px;
+}
+
+#valorPorHora, #tantoDeHoras{
+    width: 125px;
+    min-height: 50px;
+    height: auto;
+    overflow: hidden;
+    
+    float: left;
+}
+
+#tantoDeHoras{
+    margin-right: 14px;
+    
+    float: right;
+}
+
+#valorPorHora p, #tantoDeHoras p{
+    font-weight: bold;
+    
+    font-size: 0.55em;
+}
+
+#inserirValorPorHora, #inserirTantoDeHoras{
+    width: 100px;
+    height: 30px;
+    
+    border-radius: 5px 5px 5px 5px;
+    
+    border: solid 1px white;
+    
+    font-family: 'arial';
+    
+    margin-top: 10px;
+    
+    padding: 5px;
+}
+
+#inserirTantoDeHoras{
+    width: 120px;
+}
+
+#cadastrarValorPorHora, #cadastrarHorarios, #cadastrarAdicionais{
+    width: 120px;
+    height: 38px;
+    
+    font-size: 0.6em;
+    
+    font-family: 'arial';
+    
+    background-color: #DCDCDC;
+    
+    border: solid 1px #DCDCDC;
+    
+    margin-left: 150px;
+    margin-top: 40px;
+}
+
+#cadastrarAdicionais{
+    margin-top: -85px;
+    margin-right: 40px;
+    
+    float: right;
+}
+
+.consultaValorAdicional, .consultaHorasAdicionais{
+    width: 130px;
+    height: 50px;
+    
+    text-align: center;
+    
+    float: left;
+}
+
+.consultaValorAdicional{
+    border-right: solid 2px white;
+}
+
+.consultaHorasAdicionais{
+    float: right;
+}
+
+.consultaValorAdicional p, .consultaHorasAdicionais p{
+    font-size: 0.55em;
+    font-weight: bold;
+}
+
+
+#cadastrarHorarios{
+    margin-top: 20px;
+}
+
+.consultaPreco, .consultaHoraVal{
+    width: 130px;
+    min-height: 35px;
+    height: auto;
+    overflow: hidden;
+    
+    color: white;
+    
+    padding: 8px;
+    
+    text-align: center;
+    
+    float: left
+}
+
+.consultaHoraVal{
+    border-left: solid 2px white;
+    
+    float: right;
+}
+
+#cadastroHorasAdicionais, #consultaHorasAdicionais{
+    width: 420px;
+    height: 227px;
+    
+    background-color: #00558B;
+    
+    margin-bottom: 50px;
+    
+    padding-top: 15px;
+    
+    float: left;
+}
+
+#consultaHorasAdicionais{
+    padding-left: 80px;
+    padding-right: 80px;
+    
+    background-color: #DCC500;
+}
+
+#consultaHorasAdicionais h5{
+    margin-bottom: 35px;
+}
+
+#cadastroHorasAdicionais h5, #consultaHorasAdicionais h5{
+    font-size: 0.7em;
+    
+    color: white;
+}
+
+#inserirHorasValoresAdicionais{
+    width: 110px;
+    height: 140px;
+    
+    line-height: 70px;
+    
+    margin-top: 20px;
+    margin-left: 70px;
+    
+    float: left;
+}
+
+#valorAdicional, #horaAdicional{
+    width: 110px;
+    height: 30px;
+    
+    border-radius: 6px 6px 6px 6px; 
+    
+    font-family: 'arial';
+    
+    border: solid 1px white;
+    
+    padding-left: 5px;
+}
+
+#cadastroHorario{
+    width: 300px;
+    height: 60px;
+}
+
+#cadastroHorario p{
+    font-size: 0.55em;
+    
+    font-weight: bold;
+    
+    margin-top: 5px;
+    
+    float: left;
+}
+
+#inserirHorario{
+    width: 140px;
+    height: 30px;
+    
+    border-radius: 5px 5px 5px 5px;
+    
+    border: solid 1px white;
+    
+    float: right;
+    
+    padding: 5px;
+    
+    font-family: 'arial';
+}
+
+.consultaHorario{
+    width: 250px;
+    height: 50px;
+    
+    color: white;
+    
+    text-align: center;
+}
+
+#tblRendimentoDiario, #tblRendimentoMensal, #tblRendimentoAnual{
+    width: 800px;
+    min-height: 100px;
+    height: auto;
+    overflow: hidden;
+    
+    border: solid 2px #DCC500;
+    
+    font-size: 0.7em;
+    
+    text-align: center;
+    
+    margin-bottom: 100px;
+}
+
+#tblRendimentoAnual{
+    margin-bottom: 0px;
+}
+
+#tblRendimentoDiario td, #tblRendimentoMensal td, #tblRendimentoAnual td{
+    background-color: white;
+}
+
+.camposConsulta2{
+    min-height: 30px;
+    height: auto;
+    overflow: hidden;
+    
+    border-top: solid 2px black;
+}
+
+#tblControleClientes{
+    width: 1000px;
+    min-height: 100px;
+    height: auto;
+    overflow: hidden;
+    
+    margin-left: -50px;
+}
+
+#tblControleClientes td{
+    padding: 5px;
+}
+
+.tituloControleClienteAmarelo, .tituloControleClienteAzul{
+    text-align: center;
+    
+    font-weight: bold;
+    
+    font-size: 0.7em;
+    
+    background-color: #DCC500;
+    
+    color: #00558B;
+}
+
+.tituloControleClienteAzul{
+    background-color: #00558B;
+    
+    color: white;
+}
+
+.conteudoAzul, .conteudoAmarelo{
+    background-color: white;
+    
+    border: solid 2px #00558B;
+}
+
+.conteudoAmarelo{
+    border: solid 2px #DCC500;
+}
