@@ -83,26 +83,10 @@
                                         <input id="inserirValorPorHora" type="text" name="inserirValorPorHora" value="R$" placeholder="Valor" required>
                                     </div>
 
-                                    <div id="tantoDeHoras">
+                                    <div id="tipoCobranca">
                                         <p>Tipo de cobrança</p>
 
-                                        <select id="inserirTantoDeHoras" name="tipoDeCobranca">
-                                            <option>Escolher</option>
-                                            
-                                            <?php
-                                                $sql = "select * from tblTipoCobranca where idCobranca". $idCobranca;
-                                            
-                                                $select = mysqli_query($conex, $sql);
-                                            
-                                                while($rsCobranca = mysqli_fetch_assoc($select)){
-                                            ?>
-                                            
-                                            <option value=""> <?= $rsCobranca['tipoDeCobranca'];?> </option>
-                                            
-                                            <?php
-                                                }
-                                            ?>
-                                        </select>
+                                        <input id="inserirTipoCobranca" type="text" name="inserirTantoDeHoras" value="" placeholder="Cobrança" required>
                                     </div>
                                 </div>
 
@@ -121,52 +105,13 @@
                                 </div>
 
                                 <!--Linhas dos resultados-->
-                                <div class="consultaPreco">
+                                <div id="containerValor">
                                     <table id="table">
-                                        <td>
-                                            <tr></tr>
-                                        </td>
+                                        <tr class="colunas">
+                                            <td class="rsValor"></td>
+                                            <td class="rsTipoCobranca"></td>
+                                        </tr>    
                                     </table>
-                                </div>
-                                        
-                                 <div class="consultaHoraVal"></div>
-                            </div>
-                        </div>
-                    </form>
-                    
-                    
-                    <!--CADASTRO DE HORAS ADICIONAIS-->
-                    <form name="frmCadastroHorasValoresAdicionais" method="get" action="cmsAdmPrecos.php">
-                        <div class="linhaDivs">
-                            <div id="cadastroHorasAdicionais">
-                                <h5>*Cadastro de valores adicionais*</h5>
-
-                                <div id="inserirHorasValoresAdicionais">
-                                    <input id="valorAdicional" type="text" name="valorAdicional" value="R$">
-
-                                    <input id="horaAdicional" type="text" name="horaAdicional" value="" placeholder="Apenas a hora">
-                                </div>
-
-                                <input id="cadastrarAdicionais" type="submit" name="cadastrarAdicionais" value="Cadastrar">
-                            </div>
-
-                            <div id="consultaHorasAdicionais">
-                                <h5>Consulta - valores adicionais</h5>
-
-                                <!--LINHA DOS TÍTULOS-->
-                                <div class="consultaValorAdicional">
-                                    <p>Valor</p>
-                                </div>
-                                <div class="consultaHorasAdicionais">
-                                    <p>Horas adicionais</p>
-                                </div>
-
-                                <!--LINHA DAS CONSULTAS-->
-                                <div class="consultaValorAdicional">
-
-                                </div>
-                                <div class="consultaHorasAdicionais">
-
                                 </div>
                             </div>
                         </div>
@@ -181,5 +126,7 @@
                 </footer>
             </div>
         </form>
+        
+        <script src="../js/scriptPreco.js"></script>
     </body>
 </html>

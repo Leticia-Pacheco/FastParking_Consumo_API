@@ -24,16 +24,32 @@ create table tblClientes (
 );
 
 insert into tblClientes(idValor, nomeCliente, placaVeiculo, modeloVeiculo, corVeiculo, tipoVeiculo, horarioEntrada, 
-dataEntrada, horarioSaida,dataSaida)
+dataEntrada, horarioSaida, dataSaida)
 values(1, 'Alfredo', 'SDF-0261', 'Corsa', 'Prata', 'Carro', current_time(), current_date(), null, null);
 
-select * from tblClientes;
+
+#PARA VERIFICAR A DIFERENÇA DE HORAS QUE O CLIENTE FICOU NO ESTACIONAMENTO
+#O número foi negativo pois a entrada foi num dia e a saída foi em outro, por isso usamos o datetime.
+select (timediff(horarioSaida, horarioEntrada) <= 1) as horas from tblClientes;
+
+select *, timediff(dataSaida, dataEntrada) as tempoPermanencia from tblClientes;
+
+
+
+#PARA ATUALIZAR AS INFORMAÇÕES DA TABELA
+UPDATE `tblClientes` SET `horarioSaida` = current_time(), `dataSaida` = current_date()
+WHERE `idCliente` = 1;
+
+
+
 
 show tables;
 
 select tblClientes.idCliente, tblClientes.nomeCliente, tblClientes.placaVeiculo, tblClientes.modeloVeiculo, 
-tblClientes.corVeiculo, tblClientes.tipoVeiculo, tblClientes.horarioEntrada, tblClientes.dataSaida
-        from tblClientes;
+tblClientes.corVeiculo, tblClientes.tipoVeiculo, tblClientes.horarioEntrada, tblClientes.dataEntrada,
+tblClientes.horarioSaida, tblClientes.dataSaida
+from tblClientes;
+
 
 select tblClientes.idCliente, tblClientes.nomeCliente, tblClientes.placaVeiculo, tblClientes.modeloVeiculo, 
 tblClientes.corVeiculo, tblClientes.tipoVeiculo, tblClientes.horarioEntrada, tblClientes.dataSaida
@@ -58,7 +74,9 @@ insert into tblClientes
                         'Verde',
 						'Carro'
                     );
-
+select tblClientes.*, tblValores.valor
+from tblClientes, tblValores
+where tblClientes.idValor = tblValores.idValor;
 
 create table tblComprovanteEntrada (
 	idComprovanteEntrada int not null auto_increment primary key,
@@ -76,6 +94,9 @@ select * from tblComprovanteEntrada;
 
 #Segmento DIREITO da tabela de clientes
 
+select hour(timediff(horarioEntrada,horarioSaida)) as diferenca
+                from tblClientes
+                where idCliente = 1;
 
 
 
@@ -90,12 +111,21 @@ create table tblValores(
     references tblTipoCobranca(idCobranca)
 );
 
+
+
 select tblValores.idValor, tblValores.valor, tblTipoCobranca.tipoDeCobranca
 from tblValores, tblTipoCobranca
 where tblValores.idCobranca = tblTipoCobranca.idCobranca;
 
+select valor from tblValores where idValor = 1;
+
 insert into tblValores(valor, idCobranca)
-values('R$ 98,00', 2);
+values('R$ 120,00', 9);
+
+UPDATE `tblValores` SET `valor` = "R$ 120,00", `idCobranca` = 3
+WHERE `idValor` = 5;
+
+delete from tblValores where idValor = 5;
 
 
 create table tblTipoCobranca(
@@ -103,14 +133,14 @@ create table tblTipoCobranca(
     tipoDeCobranca varchar(30) not null
 );
 
-insert into tblTipoCobranca(tipoDeCobranca) values('Horas adicionais');
+insert into tblTipoCobranca(tipoDeCobranca) values('Diária');
 
 select * from tblTipoCobranca;
 
 select tblTipoCobranca.idCobranca, tblTipoCobranca.tipoDeCobranca from tblTipoCobranca where tblTipoCobranca.idCobranca=2;
 
 
-
+delete from tbltipocobranca where idCobranca >2 and idCobranca <9;
 
 
 

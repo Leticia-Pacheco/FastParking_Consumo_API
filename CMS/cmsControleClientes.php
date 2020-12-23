@@ -75,9 +75,7 @@
                         <!--LINHA DOS TÍTULOS-->
                         <tr>
                             <td class="tituloControleClienteAzul">Nome do cliente</td>
-                            <td class="tituloControleClienteAmarelo">Data de entrada</td>
-                            <td class="tituloControleClienteAzul">Horário de entrada</td>
-                            <td class="tituloControleClienteAmarelo">Data de saída</td>
+                            <td class="tituloControleClienteAmarelo">Horário de entrada</td>
                             <td class="tituloControleClienteAzul">Horário de saída</td>
                             <td class="tituloControleClienteAmarelo">Valor total</td>
                             <td class="tituloControleClienteAzul">Ações</td>
@@ -85,8 +83,6 @@
                         
                         <!--LINHA DA CONSULTA-->
                         <tr id="consultaClientes">
-                            <td class="conteudoAzul"></td>
-                            <td class="conteudoAmarelo"></td>
                             <td class="conteudoAzul"></td>
                             <td class="conteudoAmarelo"></td>
                             <td class="conteudoAzul"></td>
