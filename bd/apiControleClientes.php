@@ -15,7 +15,7 @@
         
         /*Validação para filtrar pelo ID*/
         if($id > 0){
-            $sql = $sql . " and tblClientes.idCliente = ".$id;
+            $sql = $sql . " and tblClientes.idCliente = " .$id;
         }
         
 
@@ -33,7 +33,9 @@
                 "placaVeiculo"         => $rsClientes['placaVeiculo'],
                 "modeloVeiculo"        => $rsClientes['modeloVeiculo'],
                 "corVeiculo"           => $rsClientes['corVeiculo'],
-                "tipoVeiculo"          => $rsClientes['tipoVeiculo']
+                "tipoVeiculo"          => $rsClientes['tipoVeiculo'],
+                "horarioEntrada"       => $rsClientes['horarioEntrada'],
+                "horarioSaida"         => $rsClientes['horarioSaida']
             );
         }
         
@@ -89,7 +91,9 @@
                 "placaVeiculo"         => $rsClientes['placaVeiculo'],
                 "modeloVeiculo"        => $rsClientes['modeloVeiculo'],
                 "corVeiculo"           => $rsClientes['corVeiculo'],
-                "tipoVeiculo"          => $rsClientes['tipoVeiculo']
+                "tipoVeiculo"          => $rsClientes['tipoVeiculo'],
+                "horarioEntrada"       => $rsClientes['horarioEntrada'],
+                "horarioSaida"         => $rsClientes['horarioSaida']
             );
         }
         
@@ -119,6 +123,8 @@
         $modeloVeiculo = (string) null;
         $corVeiculo = (string) null;
         $tipoVeiculo = (string) null;
+        $horarioEntrada = (string) null;
+        $horarioSaida = (string) null;
 
         /*Converte o formato JSON para um Array de dados*/
         /*$dadosContato = convertArray($dados);*/
@@ -132,6 +138,8 @@
         $modeloVeiculo = $dadosCliente['modeloVeiculo'];
         $corVeiculo = $dadosCliente['corVeiculo'];
         $tipoVeiculo = $dadosCliente['tipoVeiculo'];
+        $horarioEntrada = $dadosCliente['horarioEntrada'];
+        $horarioSaida = $dadosCliente['horarioSaida'];
         
         /*explode() - localiza um caracter separador do conteudo e dividi os dados em um vetor
         $data = explode("/", $_POST['txtNascimento']);*/
@@ -148,7 +156,9 @@
                         placaVeiculo,
                         modeloVeiculo,
                         corVeiculo,
-                        tipoVeiculo
+                        tipoVeiculo,
+                        horarioEntrada,
+                        horarioSaida
                     )
                     values
                     (
@@ -157,7 +167,9 @@
                         '". $placaVeiculo ."',
                         '". $modeloVeiculo ."', 
                         '".$corVeiculo."',
-                        '". $tipoVeiculo ."'
+                        '". $tipoVeiculo ."',
+                        '". $horarioEntrada ."',
+                        '". $horarioSaida ."'
                     );
                 ";
 
