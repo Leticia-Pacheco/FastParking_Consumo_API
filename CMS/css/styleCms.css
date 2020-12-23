@@ -53,7 +53,7 @@ h5{
 
 header, footer{
     width: 1166px;
-    height: 150px;
+    height: 158px;
     
     color: #00558B;
     
@@ -216,7 +216,7 @@ footer img{
     padding-left: 35px;
 }
 
-#valorPorHora, #tantoDeHoras{
+#valorPorHora, #inserirTipoCobranca{
     width: 125px;
     min-height: 50px;
     height: auto;
@@ -225,19 +225,19 @@ footer img{
     float: left;
 }
 
-#tantoDeHoras{
+#tipoCobranca{
     margin-right: 14px;
     
     float: right;
 }
 
-#valorPorHora p, #tantoDeHoras p{
+#valorPorHora p, #tipoCobranca p{
     font-weight: bold;
     
     font-size: 0.55em;
 }
 
-#inserirValorPorHora, #inserirTantoDeHoras{
+#inserirValorPorHora, #inserirTipoCobranca{
     width: 100px;
     height: 30px;
     
@@ -252,7 +252,7 @@ footer img{
     padding: 5px;
 }
 
-#inserirTantoDeHoras{
+#inserirTipoCobranca{
     width: 120px;
 }
 
@@ -277,6 +277,25 @@ footer img{
     margin-right: 40px;
     
     float: right;
+}
+
+#table {
+    padding-top: 20px;
+    width: 300px;
+}
+
+.rsValor, .rsTipoCobranca {
+    color: white;
+    font-size: 15px;
+    text-align: center;
+}
+
+.rsValor {
+    padding-left: 10px;
+}
+
+.rsTipoCobranca {
+    padding-right: 35px;
 }
 
 .consultaValorAdicional, .consultaHorasAdicionais{
