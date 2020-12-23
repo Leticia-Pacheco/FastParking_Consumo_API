@@ -80,15 +80,6 @@
                             <td class="tituloControleClienteAmarelo">Valor total</td>
                             <td class="tituloControleClienteAzul">Ações</td>
                         </tr>
-                        
-                        <!--LINHA DA CONSULTA-->
-                        <tr id="consultaClientes">
-                            <td class="conteudoAzul"></td>
-                            <td class="conteudoAmarelo"></td>
-                            <td class="conteudoAzul"></td>
-                            <td class="conteudoAmarelo"></td>
-                            <td class="conteudoAzul"></td>
-                        </tr>
                     </table>
                 </div>
 
@@ -100,5 +91,7 @@
                 </footer>
             </div>
         </form>
+        
+        <script src="../js/scriptControleClientes.js"></script>
     </body>
 </html>
