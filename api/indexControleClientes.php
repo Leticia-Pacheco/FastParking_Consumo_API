@@ -169,7 +169,7 @@
 
 
     /*EndPoint para atualizar a foto via POST (Para receber elementos file, somente será enviado via POST, mesmo que seja um update)*/
-    $app->post('/controleClientes/{id}', function ($request, $response, $args){
+    $app->put('/controleClientes/{id}', function ($request, $response, $args){
         
         
         $contentType = $request->getHeaderLine('Content-Type');
@@ -178,8 +178,12 @@
         /*strstr --- serve para procurar uma parte de uma String*/
         if(strstr($contentType, "multipart/form-data")){
             
-            
+            require_once('../bd/apiControleClientes.php');
+
+
             $idCliente = $args['id'];
+            $clientes = listarClientes($idCliente);
+            $functionRetorno = atualizarCliente($idCliente);
             
             
             /*Import do arquivo que buscará no banco*/
@@ -219,6 +223,28 @@
         }
     });
    
+
+    $app->get('/controleClientesPagar/{idCliente}', function($request, $response, $args){
+    
+        $idCliente = $args['idCliente'];
+        
+        //Import do arquivo que vai buscar no BD
+        require_once('../bd/apiControleClientes.php');
+        
+        //Função para Listar todos os Contatos
+        $listarValor = valorAserPago($idCliente);
+        
+        //Valida se houve retorno de dados do banco
+        if($listarValor)
+            return $response    ->withStatus(200)
+                                ->withHeader('Content-Type', 'application/json')
+                                ->write($listarValor);
+        else
+            return $response    ->withStatus(204);
+    });
+
+
+
 
     $app->run();
 ?>
