@@ -15,13 +15,13 @@
         
         /*Validação para filtrar pelo ID*/
         if($id > 0){
-            $sql = $sql . " where tblClientes.idCliente = ".$id;
-            
+            $sql = $sql . " and tblClientes.idCliente = ".$id;
         }
         
 
         $select = mysqli_query($conex, $sql);
         
+
         while($rsClientes = mysqli_fetch_assoc($select)) {
             
             /*Os colchetes servem para indicar que será feita uma coleção de arrays, não renovar um único array*/
@@ -213,33 +213,88 @@
 
 
     function atualizarCliente ($idCliente){
-            //Import do arquivo de variáveis e constantes
-            require_once('../modulos/config.php');
+        //Import do arquivo de variáveis e constantes
+        require_once('../modulos/config.php');
 
-            //Import do arquivo de função para conectar no BD
-            require_once('conexaoMysql.php');
+        //Import do arquivo de função para conectar no BD
+        require_once('conexaoMysql.php');
 
-            //chama a função que vai estabelecer a conexão com o BD
-            if(!$conex = conexaoMysql())
-            {
-                echo("<script> alert('".ERRO_CONEX_BD_MYSQL."'); </script>");
-                //die; //Finaliza a interpretação da página
-            }
-            
-            $sql = "update tblClientes
-                    where idCliente = ".$idCliente;
-            
-            if(mysqli_query($conex, $sql)){
-                return true;
-            }
-            else{
-                return false;
-            }
+        //chama a função que vai estabelecer a conexão com o BD
+        if(!$conex = conexaoMysql())
+        {
+            echo("<script> alert('".ERRO_CONEX_BD_MYSQL."'); </script>");
+            //die; //Finaliza a interpretação da página
         }
+        
+        $sql = "update tblClientes
+                where idCliente = ".$idCliente;
+        
+        if(mysqli_query($conex, $sql)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
     
 
 
-    /*Converte array em JSON*/
+    function valorAserPago($idCliente){
+        require_once('../modulos/config.php');
+
+        require_once('conexaoMysql.php');
+
+        if(!$conex = conexaoMysql()) {
+            echo("<script> alert('".ERRO_CONEX_BD_MYSQL."'); </script>");
+            //die; //Finaliza a interpretação da página
+        }
+
+        $sql = "select hour(timediff(horarioEntrada,horarioSaida)) as diferenca
+                from tblClientes
+                where idCliente = ". $idCliente;
+
+        $select = mysqli_query($conex, $sql);
+
+        $dadoPagar = mysqli_fetch_assoc($select);
+
+        $valorCliente = $dadoPagar['diferenca'];
+
+
+        // SQL DOS VALORES DA COBRANÇA
+        $sqlTwo = "select valor from tblValores where idValor = 1;";
+
+        $selectTwo = mysqli_query($conex, $sqlTwo);
+
+        $tipoValorUm = mysqli_fetch_assoc($selectTwo);
+
+        $calculoUm = $tipoValorUm['valor'];
+
+
+
+        $sqlThree = "select valor from tblValores where idValor = 2;";
+
+        $selectThree = mysqli_query($conex, $sqlThree);
+
+        $tipoValorDois = mysqli_fetch_assoc($selectThree);
+
+        $calculoDois = $tipoValorDois['valor'];
+
+
+        if($sql <= 1){
+            return $sqlTwo;
+        }
+        else{
+            $calculoValor = $sqlTwo + ($sql - 1) * $sqlThree;
+            return $calculoValor;
+        }
+    }
+    
+    
+    
+    
+    
+    
+        /*Converte array em JSON*/
     function convertJSON ($objeto){
         /*forçamos o cabeçalho a ser aplicação do tipo JSON*/
         header("content-type:application/json");        

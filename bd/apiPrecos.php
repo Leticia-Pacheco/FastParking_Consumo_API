@@ -106,28 +106,32 @@
         }
 
         /*Variaveis*/
-        $tipoDeCobranca = (string) null;
+        $valor = (string) null;
+        $idCobranca = (int) null;
 
         /*Converte o formato JSON para um Array de dados*/
         /*$dadosContato = convertArray($dados);*/
 
         
         /*Recebe todos os dados da API*/
-        $tipoDeCobranca = $dadosPreco['tipoDeCobranca'];
-        
+        $valor = $dadosPreco['valor'];
+        $idCobranca = $dadosPreco['idCobranca'];
+
         /*explode() - localiza um caracter separador do conteudo e dividi os dados em um vetor
         $data = explode("/", $_POST['txtNascimento']);*/
 
         /*Arrumando a data para ficar no padrão americano
         $dataNascimento = $data[2] . "-" . $data[1] . "-" . $data[0];*/
         
-        $sql = "insert into tblTipoCobranca 
+        $sql = "insert into tblValores 
                     (
-                        tipoDeCobranca
+                        valor,
+                        idCobranca
                     )
                     values
                     (
-                        '".$tipoDeCobranca."'
+                        '".$valor."',
+                        ".$idCobranca."
                     );
                 ";
 
